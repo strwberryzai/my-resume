@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Camila Mondragón Rivera - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+     <!-- navegacion -->
+ <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <div class="logo-circle">
+                    <span style="color: white; font-weight: bold;">AC</span>
+                </div>
+                <span style="font-weight: bold; font-size: 1.125rem;">Ana Camila</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#inicio" class="nav-link" data-translate="nav.home">Inicio</a>
+                <a href="#sobre-mi" class="nav-link" data-translate="nav.about">Acerca de mí</a>
+                <a href="#proyectos" class="nav-link" data-translate="nav.projects">Proyectos</a>
+                <a href="#habilidades" class="nav-link" data-translate="nav.skills">Habilidades</a>
+                <a href="#contacto" class="nav-link" data-translate="nav.contact">Contacto</a>
+            </div>
+              <!-- idioma -->
+                <div class="language-selector">
+                <button class="language-btn" id="languageBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span id="currentFlag">🇪🇸</span>
+                </button>
+                
+                <div class="language-dropdown" id="languageDropdown">
+                    <button class="language-option" data-lang="es">
+                        <span>🇪🇸</span>
+                        <span>Español</span>
+                    </button>
+                    <button class="language-option" data-lang="en">
+                        <span>🇺🇸</span>
+                        <span>English</span>
+                    </button>
+                    <button class="language-option" data-lang="fr">
+                        <span>🇫🇷</span>
+                        <span>Français</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+ <section id="inicio" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>Ana Camila Mondragón Rivera</span>
+                </div>
+
+                <h1 class="hero-title">
+                    <span class="title-line">Estudiante de</span>
+                    <span class="title-gradient">Ingeniería en Software</span>
+                </h1>
+
+                <p class="hero-description">
+                    Apasionada por crear soluciones tecnológicas
+                    innovadoras y experiencias digitales únicas.
+                    Transformando ideas en código funcional y
+                    elegante.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                    <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="decorative-circles">
+                    <div class="circle-outer"></div>
+                    <div class="circle-middle"></div>
+                    <div class="circle-center"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mí" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Mí</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-card-wrapper">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card">
+                        <p>
+                            Soy una estudiante apasionada de Ingeniería en Software de primer año, con un enfoque especializado en ciencia de datos y machine learning. Tengo experiencia práctica con Python, PostgreSQL, JavaScript y Java.
+                            Me fascina descubrir patrones en los datos y construir modelos que resuelvan problemas reales. Actualmente estoy desarrollando mis habilidades en análisis exploratorio de datos, visualización, y fundamentos de algoritmos de aprendizaje automático.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="proyectos" class="projects-section">
+        <div class="container-wide">
+            <div class="section-header">
+                <h2>Mis Proyectos</h2>
+                <p class="section-subtitle">
+                    Una galería visual de los proyectos en los que he trabajado
+                </p>
+            </div>
+
+            <div class="carousel-container">
+                <div class="carousel-main">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Slides will be generated by JS -->
+                    </div>
+
+                    <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Proyecto anterior">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Siguiente proyecto">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="carousel-border" id="carouselBorder">
+                    
+                </div>
+
+                <div class="carousel-thumbnails" id="carouselThumbnails">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
