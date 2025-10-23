@@ -791,3 +791,112 @@ section {
     text-align: center;
     padding: 0 0.5rem;
 }
+.contact-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.contact-card {
+    display: block;
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.contact-card:nth-child(1) { animation-delay: 0s; }
+.contact-card:nth-child(2) { animation-delay: 0.1s; }
+.contact-card:nth-child(3) { animation-delay: 0.2s; }
+.contact-card:nth-child(4) { animation-delay: 0.3s; }
+
+.contact-card:hover:not(.contact-card-static) {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.contact-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.contact-cta {
+    text-align: center;
+    margin-top: 3rem;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInScale 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+}
+.footer {
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.footer p {
+    text-align: center;
+    color: var(--muted-foreground);
+}
+
+.heart {
+    color: var(--primary);
+}
+@media (max-width: 767px) {
+    :root {
+        --text-2xl: 36px;
+        --text-xl: 28px;
+        --text-lg: 18px;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding-top: 6rem;
+    }
+
+    .decorative-circles {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .skills-grid {
+        gap: 1.5rem;
+    }
+}
