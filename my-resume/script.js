@@ -25,7 +25,7 @@ const translations = {
         about: {
             title: "Sobre mí",
             subtitle: "Conoce más sobre mi pasión por la tecnología y los datos",
-            description: "Como estudiante de primer año de Ingeniería en Software, me enfoco especialmente en ciencia de datos y machine learning. Mi objetivo es utilizar el poder de los datos para resolver problemas complejos y crear soluciones innovadoras que impacten positivamente en la sociedad. Me apasiona aprender nuevas tecnologías y aplicar algoritmos de machine learning para extraer insights valiosos de los datos."
+            description: "Como estudiante de primer año de Ingeniería en Software, me enfoco especialmente en aprender ciencia de datos y machine learning. Mi objetivo es utilizar el poder de los datos para resolver problemas complejos y crear soluciones innovadoras que impacten positivamente en la sociedad. Me apasiona aprender nuevas tecnologías y aplicar algoritmos de machine learning para extraer insights valiosos de los datos."
         },
         projects: {
             title: "Mis Proyectos",
