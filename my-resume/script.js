@@ -25,31 +25,23 @@ const translations = {
         about: {
             title: "Sobre mí",
             subtitle: "Conoce más sobre mi pasión por la tecnología y los datos",
-            description: "Como estudiante de primer año de Ingeniería en Software, me enfoco especialmente en aprender ciencia de datos y machine learning. Mi objetivo es utilizar el poder de los datos para resolver problemas complejos y crear soluciones innovadoras que impacten positivamente en la sociedad. Me apasiona aprender nuevas tecnologías y aplicar algoritmos de machine learning para extraer insights valiosos de los datos."
+            description: "Como estudiante de primer año de Ingeniería en Software, me enfoco especialmente en ciencia de datos y machine learning. Mi objetivo es utilizar el poder de los datos para resolver problemas complejos y crear soluciones innovadoras que impacten positivamente en la sociedad. Me apasiona aprender nuevas tecnologías y aplicar algoritmos de machine learning para extraer insights valiosos de los datos."
         },
         projects: {
             title: "Mis Proyectos",
             subtitle: "Una colección de trabajos que demuestran mis habilidades en desarrollo y análisis de datos",
             items: [
                 {
-                    title: "Análisis de Datos Climáticos",
-                    description: "Proyecto de análisis predictivo utilizando Python y machine learning para predecir patrones climáticos.",
-                    tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib"]
+                    title: "Análisis de Datos Climáticos"
                 },
                 {
-                    title: "Dashboard Interactivo",
-                    description: "Dashboard web desarrollado con JavaScript para visualizar datos de ventas en tiempo real.",
-                    tech: ["JavaScript", "Chart.js", "HTML5", "CSS3"]
+                    title: "Dashboard Interactivo"
                 },
                 {
-                    title: "Sistema de Gestión",
-                    description: "Aplicación Java con base de datos PostgreSQL para gestión de inventarios.",
-                    tech: ["Java", "PostgreSQL", "Spring Boot", "JPA"]
+                    title: "Sistema de Gestión"
                 },
                 {
-                    title: "Modelo Predictivo",
-                    description: "Desarrollo de modelo de machine learning para análisis de sentimientos en redes sociales.",
-                    tech: ["Python", "TensorFlow", "NLP", "API REST"]
+                    title: "Modelo Predictivo"
                 }
             ]
         },
@@ -118,24 +110,16 @@ const translations = {
             subtitle: "A collection of work that demonstrates my skills in development and data analysis",
             items: [
                 {
-                    title: "Climate Data Analysis",
-                    description: "Predictive analysis project using Python and machine learning to predict climate patterns.",
-                    tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib"]
+                    title: "Climate Data Analysis"
                 },
                 {
-                    title: "Interactive Dashboard",
-                    description: "Web dashboard developed with JavaScript to visualize real-time sales data.",
-                    tech: ["JavaScript", "Chart.js", "HTML5", "CSS3"]
+                    title: "Interactive Dashboard"
                 },
                 {
-                    title: "Management System",
-                    description: "Java application with PostgreSQL database for inventory management.",
-                    tech: ["Java", "PostgreSQL", "Spring Boot", "JPA"]
+                    title: "Management System"
                 },
                 {
-                    title: "Predictive Model",
-                    description: "Machine learning model development for sentiment analysis on social networks.",
-                    tech: ["Python", "TensorFlow", "NLP", "REST API"]
+                    title: "Predictive Model"
                 }
             ]
         },
@@ -204,24 +188,16 @@ const translations = {
             subtitle: "Une collection de travaux qui démontrent mes compétences en développement et analyse de données",
             items: [
                 {
-                    title: "Analyse de Données Climatiques",
-                    description: "Projet d'analyse prédictive utilisant Python et l'apprentissage automatique pour prédire les modèles climatiques.",
-                    tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib"]
+                    title: "Analyse de Données Climatiques"
                 },
                 {
-                    title: "Tableau de Bord Interactif",
-                    description: "Tableau de bord web développé avec JavaScript pour visualiser les données de ventes en temps réel.",
-                    tech: ["JavaScript", "Chart.js", "HTML5", "CSS3"]
+                    title: "Tableau de Bord Interactif"
                 },
                 {
-                    title: "Système de Gestion",
-                    description: "Application Java avec base de données PostgreSQL pour la gestion d'inventaire.",
-                    tech: ["Java", "PostgreSQL", "Spring Boot", "JPA"]
+                    title: "Système de Gestion"
                 },
                 {
-                    title: "Modèle Prédictif",
-                    description: "Développement de modèle d'apprentissage automatique pour l'analyse de sentiment sur les réseaux sociaux.",
-                    tech: ["Python", "TensorFlow", "NLP", "API REST"]
+                    title: "Modèle Prédictif"
                 }
             ]
         },
@@ -381,8 +357,6 @@ function updateProjectContent() {
     
     projects = t.projects.items.map((item, index) => ({
         title: item.title,
-        description: item.description,
-        tech: item.tech,
         gradient: projectGradients[index] || "from-pink-300 to-rose-300"
     }));
     
@@ -413,12 +387,29 @@ function initCarousel() {
     
     // Generate carousel content
     projects.forEach((project, index) => {
-        const nextColor = projectColors[(index + 1) % projectColors.length];
+        // Convert Tailwind-style gradients to CSS
+        let gradientCSS;
+        switch(project.gradient) {
+            case "from-pink-300 to-rose-300":
+                gradientCSS = "linear-gradient(135deg, #f9a8d4, #fda4af)";
+                break;
+            case "from-purple-300 to-pink-300":
+                gradientCSS = "linear-gradient(135deg, #d8b4fe, #f9a8d4)";
+                break;
+            case "from-blue-300 to-purple-300":
+                gradientCSS = "linear-gradient(135deg, #93c5fd, #d8b4fe)";
+                break;
+            case "from-green-300 to-blue-300":
+                gradientCSS = "linear-gradient(135deg, #86efac, #93c5fd)";
+                break;
+            default:
+                gradientCSS = "linear-gradient(135deg, #f9a8d4, #fda4af)";
+        }
         
         // Create slide
         const slide = document.createElement('div');
         slide.className = `carousel-slide ${index === 0 ? 'active' : ''}`;
-        slide.style.background = `linear-gradient(135deg, ${project.gradient}, ${nextColor})`;
+        slide.style.background = gradientCSS;
         
         const overlay = document.createElement('div');
         overlay.className = 'carousel-overlay';
@@ -429,7 +420,7 @@ function initCarousel() {
         // Create thumbnail
         const thumbnail = document.createElement('button');
         thumbnail.className = `carousel-thumbnail ${index === 0 ? 'active' : ''}`;
-        thumbnail.style.background = `linear-gradient(135deg, ${project.gradient}, ${nextColor})`;
+        thumbnail.style.background = gradientCSS;
         thumbnail.addEventListener('click', () => goToSlide(index));
         thumbnailsContainer.appendChild(thumbnail);
     });
@@ -690,59 +681,6 @@ function generateCarouselContent() {
         }
         
         slide.style.background = gradientCSS;
-        
-        // Create content overlay
-        const content = document.createElement('div');
-        content.style.cssText = `
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 1rem;
-        `;
-        
-        const title = document.createElement('h3');
-        title.textContent = project.title;
-        title.style.cssText = `
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        `;
-        
-        const description = document.createElement('p');
-        description.textContent = project.description;
-        description.style.cssText = `
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        `;
-        
-        const techList = document.createElement('div');
-        techList.style.cssText = `
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        `;
-        
-        project.tech.forEach(tech => {
-            const techBadge = document.createElement('span');
-            techBadge.textContent = tech;
-            techBadge.style.cssText = `
-                background: rgba(255, 255, 255, 0.2);
-                padding: 0.25rem 0.5rem;
-                border-radius: 0.5rem;
-                font-size: 0.875rem;
-            `;
-            techList.appendChild(techBadge);
-        });
-        
-        content.appendChild(title);
-        content.appendChild(description);
-        content.appendChild(techList);
-        slide.appendChild(content);
         
         const overlay = document.createElement('div');
         overlay.className = 'carousel-overlay';
