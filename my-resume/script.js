@@ -1,4 +1,3 @@
-
 const translations = {
     es: {
         nav: {
@@ -12,7 +11,7 @@ const translations = {
             badge: "Estudiante de Ingeniería en Software",
             title: {
                 line1: "Hola, soy",
-                name: "Ana Camila",
+                name: "Ana Camila Mondragon Rivera",
                 line2: "Estudiante de Ingenieria en Software"
             },
             description: "Estudiante de primer año con interes en ciencia de datos y machine learning, con experiencia en Python, PostgreSQL, JavaScript y Java.",
@@ -76,7 +75,7 @@ const translations = {
             ],
             cta: "¡Colaboremos juntos!"
         },
-        footer: "Ana Camila Mondragón Rivera ❤️"
+        footer: "Ana Camila Mondragon Rivera ❤️"
     },
     en: {
         nav: {
@@ -90,7 +89,7 @@ const translations = {
             badge: "Software Engineering Student",
             title: {
                 line1: "Hi, I'm",
-                name: "Ana Camila",
+                name: "Ana Camila Mondragon Rivera",
                 line2: "Passionate about data science"
             },
             description: "First-year student specializing in data science and machine learning, with experience in Python, PostgreSQL, JavaScript, and Java.",
@@ -154,7 +153,7 @@ const translations = {
             ],
             cta: "Let's collaborate together!"
         },
-        footer: "Ana Camila Mondragón Rivera ❤️"
+        footer: "Ana Camila Mondragon Rivera ❤️"
     },
     fr: {
         nav: {
@@ -168,7 +167,7 @@ const translations = {
             badge: "Étudiante en Génie Logiciel",
             title: {
                 line1: "Salut, je suis",
-                name: "Ana Camila",
+                name: "Ana Camila Mondragon Rivera",
                 line2: "Passionnée par la science des données"
             },
             description: "Étudiante de première année spécialisée en science des données et apprentissage automatique, avec de l'expérience en Python, PostgreSQL, JavaScript et Java.",
@@ -232,7 +231,7 @@ const translations = {
             ],
             cta: "Collaborons ensemble!"
         },
-        footer: "Ana Camila Mondragón Rivera ❤️"
+        footer: "Ana Camila Mondragon Rivera ❤️"
     }
 };
 
@@ -604,9 +603,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.body.classList.add('loaded');
     
-    console.log('Portfolio de Ana Camila Mondragón Rivera cargado exitosamente! 💖');
+    console.log('Portfolio de Ana Camila Mondragon Rivera cargado exitosamente! 💖');
 });
-
 
 
 function initLanguageSelector() {
